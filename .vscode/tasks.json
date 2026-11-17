@@ -1,0 +1,24 @@
+
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build and Run Raylib Game",
+            "type": "shell",
+            "command": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+            "args": [
+                "-NoProfile",
+                "-Command",
+                "& 'C:\\raylib\\w64devkit\\bin\\g++.exe' main.cpp -o game.exe -I C:/raylib/w64devkit/include -L C:/raylib/w64devkit/lib -lraylib -lopengl32 -lgdi32 -lwinmm; if ($LASTEXITCODE -eq 0) { Start-Process './game.exe' } else { exit $LASTEXITCODE }"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": ["$gcc"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
